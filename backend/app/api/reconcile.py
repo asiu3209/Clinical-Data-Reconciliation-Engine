@@ -15,7 +15,7 @@ class SourceRecord(BaseModel):
     medication: str
     last_updated: Optional[str] = None
     last_filled: Optional[str] = None
-    source_reliability: str
+    source_reliability: str | float
 
 class ReconcileRequest(BaseModel):
     patient: PatientContext
@@ -43,14 +43,21 @@ Medication records from different systems:
 
 Determine the most likely correct medication record.
 
-Return ONLY valid JSON in this format:
+Return ONLY raw JSON in this format.
+
+Do not include markdown formatting.
+Do not include explanations.
+Do not include code blocks.
 
 {{
-"reconciled_medication": "...",
-"confidence_score": 0.0,
-"reasoning": "...",
-"recommended_actions": ["...", "..."],
-"clinical_safety_check": "PASSED or FAILED"
+"reconciled_medication": "Metformin 500mg twice daily",
+"confidence_score": 0.88,
+"reasoning": "Primary care record is most recent clinical encounter. Dose reduction appropriate given declining kidney function (eGFR 45). Pharmacy fi ll may refl ect old prescription.",
+"recommended_actions": [
+"Update Hospital EHR to 500mg twice daily",
+"Verify with pharmacist that correct dose is being fi lled"
+],
+"clinical_safety_check": "PASSED"
 }}
 """
 

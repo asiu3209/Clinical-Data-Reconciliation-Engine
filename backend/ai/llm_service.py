@@ -4,13 +4,11 @@ import os
 import hashlib,json,time
 
 load_dotenv()
-print(os.getenv("OPENAI_API_KEY"))
-os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
-os.environ["OPENAI_API_BASE"] = os.getenv("OPENAI_ENDPOINT")
-os.environ["OPENAI_API_TYPE"] = "azure"
-os.environ["OPENAI_API_VERSION"] = os.getenv("OPENAI_API_VERSION")
 
-client = OpenAI()
+client = OpenAI(
+    api_key=os.getenv("OPENAI_API_KEY"),
+    base_url="https://api.groq.com/openai/v1"
+)
 
 CACHE = {} 
 
@@ -24,27 +22,18 @@ def callLLm(prompt):
         return CACHE[key]
     
     try:
-        response = client.chat.completions.create(
-            model="clinicalDataReconciliation",
-            messages=[
-                {"role": "system", "content":"You are a clinical data reconciliation assistant."},
-                {"role": "user", "content": prompt}
-            ],
+        response = client.responses.create(
+            model="llama-3.1-8b-instant",
+            input=prompt,
             temperature=0.2
         )
-        result = response.choices[0].message.content
-        CACHE[key] = result
-        return result
+        print(response)
+        result = response.output_text
+        parsed = json.loads(result)
+
+        CACHE[key] = parsed
+        return parsed
+
     except Exception as e:
-        time.sleep(1)
-        try:
-            response = client.chat.completions.create(
-                model="clinicalDataReconciliation",
-                messages=[{"role": "user", "content": prompt}]
-            )
-
-            return json.loads(response.choices[0].message.content)
-
-        except:
-            print(e)
-            return "AI reasoning unavailable"
+        print(e)
+        return {"error": "AI reasoning unavailable"}

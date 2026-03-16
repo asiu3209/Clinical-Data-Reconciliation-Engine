@@ -1,0 +1,57 @@
+{
+  "patient": {
+    "age": 72,
+    "conditions": ["Hypertension", "Hyperlipidemia"],
+    "recent_labs": {
+      "LDL": 130,
+      "eGFR": 60
+    }
+  },
+  "sources": [
+    {
+      "system": "Hospital EHR",
+      "medication": "Atorvastatin 20mg daily",
+      "last_updated": "2025-01-05",
+      "source_reliability": "high"
+    },
+    {
+      "system": "Primary Care",
+      "medication": "Lisinopril 10mg daily",
+      "last_updated": "2024-12-20",
+      "source_reliability": "high"
+    },
+    {
+      "system": "Pharmacy",
+      "medication": "Atorvastatin 20mg daily",
+      "last_filled": "2025-01-18",
+      "source_reliability": "medium"
+    }
+  ]
+}
+
+
+For Validate
+
+{
+  "demographics": {
+    "name": "Michael Lee",
+    "dob": "1985-11-12",
+    "gender": "M"
+  },
+  "medications": [
+    "Metformin 500mg",
+    "Lisinopril 10mg"
+  ],
+  "allergies": ["Sulfa drugs"],
+  "conditions": [
+    "Type 2 Diabetes",
+    "Hypertension"
+  ],
+  "vital_signs": {
+    "blood_pressure": "128/82",
+    "heart_rate": 76,
+    "respiratory_rate": 16,
+    "temperature": 36.8
+  },
+  "last_updated": "2024-03-10"
+}
