@@ -74,40 +74,14 @@ export default function MainPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(jsonText),
       });
+
+      const data = await res.json();
+      setValidateData(data);
     } catch (e) {
       console.error(e);
       setFileError("Invalid Upload");
     }
   }
-
-  // useEffect(() => {
-  //   setValidateData({
-  //     overall_score: 62,
-  //     breakdown: {
-  //       completeness: 60,
-  //       accuracy: 50,
-  //       timeliness: 70,
-  //       clinical_plausibility: 40,
-  //     },
-  //     issues_detected: [
-  //       {
-  //         field: "allergies",
-  //         issue: "No allergies documented - likely incomplete",
-  //         severity: "medium",
-  //       },
-  //       {
-  //         field: "vital_signs.blood_pressure",
-  //         issue: "Blood pressure 340/180 is physiologically implausible",
-  //         severity: "high",
-  //       },
-  //       {
-  //         field: "last_updated",
-  //         issue: "Data is 7+ months old",
-  //         severity: "medium",
-  //       },
-  //     ],
-  //   });
-  // }, []);
 
   return (
     <div className="p-6 space-y-8 bg-gray-500 min-h-screen text-white">
@@ -157,37 +131,40 @@ export default function MainPage() {
       </div>
 
       {reconcileData && (
-        <div className="bg-gray-700 p-4 rounded-lg space-y-2">
-          <h2 className="text-lg font-semibold">Reconciled Medication</h2>
+        <div>
+          <h1 className="text-2xl font-semibold">Reconciled Medication Data</h1>
 
-          <p>
-            <strong>Medication:</strong> {reconcileData.reconciled_medication}
-          </p>
-          <p>
-            <strong>Confidence:</strong> {reconcileData.confidence_score}
-          </p>
-          <p>
-            <strong>Safety:</strong> {reconcileData.clinical_safety_check}
-          </p>
-          <p>
-            <strong>Reasoning:</strong> {reconcileData.reasoning}
-          </p>
+          <div className="bg-gray-700 p-4 rounded-lg space-y-2">
+            <p>
+              <strong>Medication:</strong> {reconcileData.reconciled_medication}
+            </p>
+            <p>
+              <strong>Confidence:</strong> {reconcileData.confidence_score}
+            </p>
+            <p>
+              <strong>Safety:</strong> {reconcileData.clinical_safety_check}
+            </p>
+            <p>
+              <strong>Reasoning:</strong> {reconcileData.reasoning}
+            </p>
 
-          <div>
-            <strong>Recommended Actions:</strong>
-            <ul className="list-disc ml-5">
-              {(reconcileData.recommended_actions || []).map(
-                (action: string, i: number) => (
-                  <li key={i}>{action}</li>
-                ),
-              )}
-            </ul>
+            <div>
+              <strong>Recommended Actions:</strong>
+              <ul className="list-disc ml-5">
+                {(reconcileData.recommended_actions || []).map(
+                  (action: string, i: number) => (
+                    <li key={i}>{action}</li>
+                  ),
+                )}
+              </ul>
+            </div>
           </div>
         </div>
       )}
 
       {validateData && (
         <div>
+          <h1 className="text-2xl font-semibold">Validated Patient Data</h1>
           <div className="border-b pb-4">
             <DataQualityCard
               title="Overall Score"

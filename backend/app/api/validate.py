@@ -27,6 +27,8 @@ Detect:
 - missing critical information
 
 Return ONLY raw JSON in this format. Do not include explanations, markdown, or code blocks.
+-Return Data that is visually presentable, such as Last Updated instead of last_updated
+-Make sure returned data is properly capitalized and with proper grammer when needed
 
 JSON format:
 
@@ -42,7 +44,7 @@ JSON format:
     {{
         "field": "string",
         "issue": "string",
-        "severity": "low | medium | high"
+        "severity": "Low | Medium | High"
     }}
 ]
 }}

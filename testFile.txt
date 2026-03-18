@@ -1,10 +1,20 @@
 {
   "patient_context": {
-    "age": 15,
-    "conditions": ["Hypertension"],
+    "age": 75,
+    "conditions": [
+      "Hypertension",
+      "Hyperlipidemia",
+      "Type 2 Diabetes",
+      "Chronic Kidney Disease Stage 3",
+      "Osteoarthritis"
+    ],
     "recent_labs": {
-      "LDL": 1300,
-      "eGFR": 600
+      "LDL": 145,
+      "HDL": 38,
+      "Triglycerides": 220,
+      "A1C": 8.7,
+      "eGFR": 55,
+      "Creatinine": 1.4
     }
   },
   "sources": [
@@ -12,12 +22,72 @@
       "system": "Hospital EHR",
       "medication": "Atorvastatin 20mg daily",
       "last_updated": "2025-01-05",
-      "source_reliability": "low"
+      "source_reliability": "high"
+    },
+    {
+      "system": "Primary Care",
+      "medication": "Lisinopril 10mg daily",
+      "last_updated": "2024-12-20",
+      "source_reliability": "high"
     },
     {
       "system": "Pharmacy",
       "medication": "Atorvastatin 20mg daily",
       "last_filled": "2025-01-18",
+      "source_reliability": "medium"
+    },
+    {
+      "system": "Specialist Cardiology Clinic",
+      "medication": "Metoprolol 50mg twice daily",
+      "last_updated": "2024-11-30",
+      "source_reliability": "high"
+    },
+    {
+      "system": "Home Health Records",
+      "medication": "Furosemide 40mg daily",
+      "last_updated": "2025-01-10",
+      "source_reliability": "medium"
+    },
+    {
+      "system": "Pharmacy",
+      "medication": "Metformin 1000mg twice daily",
+      "last_filled": "2025-01-12",
+      "source_reliability": "high"
+    },
+    {
+      "system": "Telemedicine Visit",
+      "medication": "Aspirin 81mg daily",
+      "last_updated": "2024-12-28",
+      "source_reliability": "medium"
+    },
+    {
+      "system": "Hospital EHR",
+      "medication": "Amlodipine 10mg daily",
+      "last_updated": "2025-01-03",
+      "source_reliability": "high"
+    },
+    {
+      "system": "Specialist Endocrinology",
+      "medication": "Insulin Glargine 20 units nightly",
+      "last_updated": "2024-12-22",
+      "source_reliability": "high"
+    },
+    {
+      "system": "Primary Care",
+      "medication": "Vitamin D 2000 IU daily",
+      "last_updated": "2024-12-15",
+      "source_reliability": "medium"
+    },
+    {
+      "system": "Pharmacy",
+      "medication": "Atorvastatin 20mg daily",
+      "last_filled": "2025-01-19",
+      "source_reliability": "medium"
+    },
+    {
+      "system": "Home Health Records",
+      "medication": "Acetaminophen 500mg PRN pain",
+      "last_updated": "2024-12-30",
       "source_reliability": "low"
     }
   ]

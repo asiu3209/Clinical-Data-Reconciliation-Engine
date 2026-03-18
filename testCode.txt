@@ -56,3 +56,88 @@
 }
 ]
 }
+
+{
+  "demographics": {
+    "name": "Robert Johnson",
+    "dob": "1945-08-20",
+    "gender": "Male"
+  },
+  "medications": [
+    "Metformin 1000mg",
+    "Lisinopril 20mg",
+    "Atorvastatin 40mg",
+    "Aspirin 81mg",
+    "Metoprolol 50mg",
+    "Furosemide 40mg",
+    "Amlodipine 10mg",
+    "Omeprazole 20mg",
+    "Levothyroxine 75mcg"
+  ],
+  "allergies": [
+    "Penicillin",
+    "Latex",
+    "Peanuts"
+  ],
+  "conditions": [
+    "Type 2 Diabetes",
+    "Hypertension",
+    "Hyperlipidemia",
+    "Coronary Artery Disease",
+    "Chronic Kidney Disease Stage 3",
+    "Osteoarthritis",
+    "Gout",
+    "Hypothyroidism"
+  ],
+  "vital_signs": {
+    "blood_pressure": "172/98",
+    "heart_rate": 88,
+    "respiratory_rate": 18,
+    "temperature": 98.6,
+    "oxygen_saturation": 94
+  },
+  "last_updated": "2024-08-05"
+}
+
+{
+  "demographics": {
+    "name": "Zorg Blipton",
+    "dob": "1923-02-28",
+    "gender": "Nonbinary"
+  },
+  "medications": [
+    "Rainbow Extract 500ml",
+    "Quantum Flux 20mg",
+    "Anti-Gravity Pills",
+    "Time Travel Elixir",
+    "Invisible Ink Capsules",
+    "Moon Dust Tonic",
+    "Unicorn Hair Tonic",
+    "Dragon Scale Supplement"
+  ],
+  "allergies": [
+    "Sunlight",
+    "Banana Peels",
+    "Wi-Fi Signals",
+    "Singing Cats",
+    "Glitter"
+  ],
+  "conditions": [
+    "Chronic Overthinking",
+    "Intermittent Teleportation",
+    "Selective Invisibility",
+    "Sudden Bursts of Musical Talent",
+    "Spontaneous Costume Changes",
+    "Extreme Ticklishness",
+    "Minor Levitation Episodes",
+    "Random Bubble Formation"
+  ],
+  "vital_signs": {
+    "blood_pressure": "180/120",
+    "heart_rate": 88,
+    "respiratory_rate": 42,
+    "temperature": 101.5,
+    "oxygen_saturation": 95
+  },
+  "last_updated": "2024-08-15"
+}

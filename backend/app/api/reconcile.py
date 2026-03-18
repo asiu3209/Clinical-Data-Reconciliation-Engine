@@ -45,9 +45,12 @@ Determine the most likely correct medication record.
 
 Return ONLY raw JSON in this format.
 
-Do not include markdown formatting.
-Do not include explanations.
-Do not include code blocks.
+-Do not include markdown formatting.
+-Do not include explanations.
+-Do not include code blocks.
+-Return Data that is visually presentable, such as Last Updated instead of last_updated
+-Make sure returned data is properly capitalized and with proper grammer when needed
+
 
 {{
 "reconciled_medication": "Metformin 500mg twice daily",
