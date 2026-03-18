@@ -1,7 +1,7 @@
 from openai import OpenAI
 from dotenv import load_dotenv
 import os
-import hashlib,json,time
+import hashlib,json
 
 load_dotenv()
 
