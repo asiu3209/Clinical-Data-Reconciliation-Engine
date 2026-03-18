@@ -16,8 +16,6 @@ export async function POST(request: NextRequest) {
       },
     );
 
-    console.log("FastAPI status:", response.status);
-
     const text = await response.text();
     console.log("FastAPI raw response:", text);
 
@@ -25,8 +23,8 @@ export async function POST(request: NextRequest) {
       status: response.status,
       headers: { "Content-Type": "application/json" },
     });
-  } catch (err) {
-    console.error("API Route Error:", err);
+  } catch (e) {
+    console.error("API Route Error:", e);
     return NextResponse.json({ error: "Internal error" }, { status: 500 });
   }
 }

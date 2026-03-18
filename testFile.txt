@@ -1,0 +1,24 @@
+{
+  "patient_context": {
+    "age": 15,
+    "conditions": ["Hypertension"],
+    "recent_labs": {
+      "LDL": 1300,
+      "eGFR": 600
+    }
+  },
+  "sources": [
+    {
+      "system": "Hospital EHR",
+      "medication": "Atorvastatin 20mg daily",
+      "last_updated": "2025-01-05",
+      "source_reliability": "low"
+    },
+    {
+      "system": "Pharmacy",
+      "medication": "Atorvastatin 20mg daily",
+      "last_filled": "2025-01-18",
+      "source_reliability": "low"
+    }
+  ]
+}

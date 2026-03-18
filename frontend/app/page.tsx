@@ -64,6 +64,16 @@ export default function MainPage() {
 
   async function handleValidateFileUpload() {
     try {
+      if (!vFile) return;
+
+      const text = await vFile.text();
+      const jsonText = JSON.parse(text);
+      setFileError(null);
+      const res = await fetch("/api/ValidateRoute", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(jsonText),
+      });
     } catch (e) {
       console.error(e);
       setFileError("Invalid Upload");

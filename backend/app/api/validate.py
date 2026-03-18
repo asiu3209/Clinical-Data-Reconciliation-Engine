@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
-from typing import Dict, List, Optional
+from typing import Dict, List
 from ai.llm_service import callLLm
 import json
 
