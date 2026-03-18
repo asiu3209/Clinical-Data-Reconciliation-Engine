@@ -18,7 +18,7 @@ class SourceRecord(BaseModel):
     source_reliability: str | float
 
 class ReconcileRequest(BaseModel):
-    patient: PatientContext
+    patient_context: PatientContext
     sources: List[SourceRecord]
 
 def buildReconciliationPrompt(patient: PatientContext, sources: List[SourceRecord]):
@@ -63,7 +63,7 @@ Do not include code blocks.
 
 @router.post("/reconcile/medication")
 def reconcile(data: ReconcileRequest):
-    prompt = buildReconciliationPrompt(data.patient,data.sources)
+    prompt = buildReconciliationPrompt(data.patient_context,data.sources)
     response = callLLm(prompt)
     return response
 
