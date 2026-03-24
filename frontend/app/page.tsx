@@ -5,34 +5,6 @@ import DataQualityCard from "./components/DataQualityCard";
 import IssueComponent from "./components/IssueComponent";
 import { IssueProps } from "./components/IssueComponent";
 
-export interface PatientContext {
-  age: number;
-  conditions: string[];
-  recent_labs: Record<string, any>;
-}
-
-export interface SourceRecord {
-  system: string;
-  medication: string;
-  last_updated?: string;
-  last_filled?: string;
-  source_reliability: string | number;
-}
-
-export interface ReconcileRequest {
-  patient_context: PatientContext;
-  sources: SourceRecord[];
-}
-
-export interface ValidateRequest {
-  demographics: Record<string, any>;
-  medications: string[];
-  allergies: string[];
-  conditions: string[];
-  vital_signs: Record<string, any>;
-  last_updated: string;
-}
-
 export default function MainPage() {
   const [reconcileData, setReconcileData] = useState<any>(null);
   const [validateData, setValidateData] = useState<any>(null);
